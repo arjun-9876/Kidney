@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Liver disease prediction</title>
+<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="main.html">Predict</a></li>
+          </ul>
+        </nav>
+      </header>
+<h1><b><i>Kidney Disease Prediction</i></b></h1>
+
+<h2> Enter the details to check whether Liver disease affect or not!</h2>
+<form action="{{ url_for('predict') }}" method="POST">
+<div >
+
+    <p> blood_urea: <input type='number' name='blood_urea' required='required' />
+	<p> blood glucose random : <input type='number' name='blood glucose random' required='required' />
+    <p> anemia : <input type='text' name='anemia' required='required' />
+    <p> coronary_artery_disease: <input type='text' name= 'coronary_artery_disease' required='required' /></p>
+    <p> pus_cell : <input type='text' name='pus_cell' required='required' /></p>
+    <p> red_blood_cell <input type='text' name='red_blood_cell' required='required' /></p>
+    <p> diabetesmellitus : <input type='text' name='diabetesmellitus' required='required' /></p>
+    <p> pedal_edema : <input type='text' name='pedal_edema' required='required' /></p>
+
+</div>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+    {% if prediction_text==1 %}
+        <h1>Prediction: <span class="danger">Oops! You have Chronic Kidney Disease</span></h1>
+    {% else %}
+        <h1>Prediction: <span class='safe'>Great! You Don't have Chronic Kidney Disease</span></h1>
+    {% endif %}
+</body>
+</html>

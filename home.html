@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home page</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+    <body >
+
+        <header>
+            <nav>
+              <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="main.html">Predict</a></li>
+              </ul>
+            </nav>
+          </header>
+          <br>
+          <br>
+          <center>
+            <h1>DESCRIPTION</h1><br>
+            <br>
+            <br>
+            <p> Chronic kidney disease(CKD) means that your kidney are damaged and can’t filter blood
+                as they should. This damaged can cause wastes to build up in your body. It can also
+                cause other problems that can harm your health. Diabetes and high blood pressure are the most
+                common causes of CDK.
+            </p><br><br>
+            <form action="{{ url_for('prediction_page') }}" method="get">
+           <button type="submit">Predict</button>
+            </form>
+          </center>
+
+    </body>
+</html>
